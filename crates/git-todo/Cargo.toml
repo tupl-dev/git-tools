@@ -1,0 +1,29 @@
+[package]
+authors.workspace = true
+categories.workspace = true
+description = "CLI tool for managing TODO lists in git"
+edition.workspace = true
+license.workspace = true
+keywords.workspace = true
+name = "git-todo"
+readme = "README.md"
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+clap = { workspace = true }
+gix = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+shellexpand = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+git-test-util = { workspace = true }
+
+[lints]
+workspace = true
+
+[[test]]
+name = "functional"
+path = "tests/main.rs"

@@ -1,0 +1,56 @@
+[workspace]
+members = ["crates/*"]
+resolver = "3"
+
+[workspace.package]
+authors = ["tupl"]
+categories = ["command-line-utilities"]
+description = "Git Tools"
+edition = "2024"
+keywords = ["git"]
+license = "GPL-3.0-or-later"
+readme = "README.md"
+repository = "https://github.com/tupl-dev/git-tools"
+version = "0.1.0"
+
+[workspace.dependencies]
+clap = { features = ["derive"], version = "4.6" }
+gix = { version = "0.87" }
+serde = { features = ["derive"], version = "1.0" }
+serde_json = { version = "1.0" }
+shellexpand = { version = "3.1" }
+tempdir = { version = "0.3" }
+thiserror = { version = "2.0" }
+
+git-test-util = { path = "crates/git-test-util" }
+
+[workspace.lints.clippy]
+cargo = { level = "warn", priority = -1 }
+nursery = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+
+dbg_macro = "warn"
+exit = "warn"
+expect_used = "warn"
+indexing_slicing = "warn"
+missing_errors_doc = "allow"
+multiple_crate_versions = "allow"
+panic = "warn"
+ref_patterns = "warn"
+rest_pat_in_fully_bound_structs = "warn"
+str_to_string = "warn"
+string_slice = "warn"
+todo = "warn"
+try_err = "warn"
+unchecked_time_subtraction = "warn"
+undocumented_unsafe_blocks = "warn"
+unimplemented = "warn"
+unreachable = "warn"
+unwrap_in_result = "warn"
+unwrap_used = "warn"
+
+[profile.release]
+codegen-units = 1
+lto = true
+panic = "abort"
+strip = "symbols"

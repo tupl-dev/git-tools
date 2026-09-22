@@ -1,0 +1,17 @@
+[package]
+authors.workspace = true
+categories.workspace = true
+description = "Git testing utility library"
+edition.workspace = true
+license.workspace = true
+keywords.workspace = true
+name = "git-test-util"
+readme = "README.md"
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+tempdir = { workspace = true }
+
+[lints]
+workspace = true
